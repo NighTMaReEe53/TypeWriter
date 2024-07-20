@@ -1,0 +1,177 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --mainColor: #03a9f4;
+  --whiteColor: #FFF;
+  --spansColor: #009688;
+  --padding: 20px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #EEE;
+}
+
+.game-container {
+
+  .game-name {
+    background-color: var(--mainColor);
+    padding-block: var(--padding);
+    color: var(--whiteColor);
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .container {
+    max-width: 900px;
+    margin-inline: auto;
+
+    .msg {
+      background-color: var(--whiteColor);
+      padding-block: var(--padding);
+      text-align: center;
+      font-size: large;
+      margin-block: 15px;
+
+      span {
+        color: var(--spansColor);
+        font-weight: bold;
+
+        &::before {
+          content: "{ ";
+        }
+
+        &::after {
+          content: " }";
+        }
+      }
+    }
+
+    .theWord {
+      color: var(--mainColor);
+      font-size: 60px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: block;
+      background-color: var(--spansColor);
+      padding-block: 15px;
+      width: 100%;
+      font-size: 18px;
+      color: var(--whiteColor);
+      border-radius: 4px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: 0.2s ease;
+      margin-block: 15px;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+
+    .typing {
+      padding: 15px;
+      display: block;
+      width: 100%;
+      border: 2px solid var(--mainColor);
+      outline: none;
+      text-align: center;
+      color: #1f1f1f;
+      font-weight: bold;
+      caret-color: var(--mainColor);
+      border-radius: 4px;
+      font-size: 18px;
+    }
+
+    .upcoming-word {
+      background-color: var(--whiteColor);
+      margin-block: 15px;
+      padding: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 15px;
+      border-radius: 4px;
+
+      div {
+        background-color: var(--mainColor);
+        padding: 5px;
+        border-radius: 4px;
+        color: var(--whiteColor);
+      }
+    }
+
+    .controls {
+      background-color: var(--whiteColor);
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 15px;
+
+      span {
+        font-weight: bold;
+        color: var(--spansColor);
+      }
+    }
+  }
+
+  .finish {
+    span {
+      background-color: var(--whiteColor);
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 4px;
+      display: block;
+
+      &.good {
+        color: var(--spansColor);
+      }
+
+      &.bad {
+        color: #f02;
+      }
+    }
+  }
+
+}
+
+@media(max-width:776px) {
+  .game-container {
+    .container {
+      padding: 10px;
+
+      .msg {
+        font-size: 13px;
+      }
+
+      .typing {
+        padding: 10px;
+      }
+
+      .upcoming-word {
+        flex-wrap: wrap;
+        font-size: 14px;
+      }
+      .theWord {
+        font-size: 50px;
+      }
+    }
+  }
+}
